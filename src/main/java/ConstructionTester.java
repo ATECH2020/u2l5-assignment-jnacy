@@ -4,6 +4,7 @@ public class ConstructionTester
 {
     public static void main(String[] args)
     {
+      // initialize/create variables
       Scanner sc = new Scanner(System.in);
 
       double lumberCost = 8, windowCost = 11;
@@ -11,6 +12,7 @@ public class ConstructionTester
       double total, grandTotal;
       int boards, windows;
 
+      // get values from user
       System.out.println("Enter the sales tax rate:");
       salesTax = sc.nextDouble();
 
@@ -20,6 +22,7 @@ public class ConstructionTester
       System.out.println("How many windows do you need?");
       windows = sc.nextInt();
 
+      // compute totals
       Construction construction = new Construction(lumberCost, windowCost, salesTax);
 
       total = construction.lumberCost(boards) + construction.windowCost(windows);

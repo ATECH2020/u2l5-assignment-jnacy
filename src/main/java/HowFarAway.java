@@ -4,9 +4,11 @@ public class HowFarAway
 {
     public static void main(String[] args)
     {
+      // init/create vars
       Scanner sc = new Scanner(System.in);
-      double startLat, startLong, endLat, endLong;
+      double startLat, startLong, endLat, endLong, distance;
 
+      // get values from user
       System.out.print("Enter the latitude of the starting location: ");
       startLat = sc.nextDouble();
 
@@ -19,16 +21,12 @@ public class HowFarAway
       System.out.print("Enter the longitude of the ending location: ");
       endLong = sc.nextDouble();
 
+      // calculate distance
       GeoLocation startLoc = new GeoLocation(startLat, startLong);
       GeoLocation endLoc = new GeoLocation(endLat, endLong);
 
-      System.out.print("The distance is " + startLoc.distanceFrom(endLoc) + " miles.");
-        /*
-Enter the latitude of the starting location: 48.8567
-Enter the longitude of the starting location: 2.3508
-Enter the latitude of the ending location: 51.5072
-Enter the longitude of the ending location: 0.1275
-The distance is 208.08639358288565 miles.
-        */
+      distance = startLoc.distanceFrom(endLoc);
+
+      System.out.print("The distance is " + distance + " miles.");
     }
 }
